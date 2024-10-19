@@ -6,6 +6,11 @@ const taskRoutes = require("./routes/taskRoutes");
 const userRoutes = require("./routes/userRoutes");
 const path = require("path");
 
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "daily-tasks-report-frontend/build")));
 
@@ -13,10 +18,6 @@ app.use(express.static(path.join(__dirname, "daily-tasks-report-frontend/build")
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/daily-tasks-report-frontend/build/index.html"));
 });
-
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
 mongoose
   .connect("mongodb+srv://yousefKamaldb:yoyoENZO1075@cluster0.qje8a.mongodb.net/tasksDB?retryWrites=true&w=majority", {
