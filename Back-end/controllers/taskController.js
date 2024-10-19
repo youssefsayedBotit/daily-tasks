@@ -1,4 +1,4 @@
-const Task = require("../models/Task");
+const Task = require("../models/task");
 const User = require("../models/user");
 
 // Create Task
