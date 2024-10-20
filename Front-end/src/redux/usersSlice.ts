@@ -20,7 +20,7 @@ const initialState: UserState = {
 
 // Async action to fetch users
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
-  const response = await axios.get("http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com:5000/api/users");
+  const response = await axios.get("http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com/api/users");
   return response.data;
 });
 
@@ -28,7 +28,7 @@ export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
 export const createUser = createAsyncThunk(
   "users/createUser",
   async (user: User) => {
-    const response = await axios.post("http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com:5000/api/users", user);
+    const response = await axios.post("http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com/api/users", user);
     return response.data;
   }
 );
