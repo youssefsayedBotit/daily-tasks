@@ -24,7 +24,7 @@ export const fetchTasks = createAsyncThunk(
   "tasks/fetchTasks",
   async (employeeId: string) => {
     const response = await axios.get(
-      `http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com/api/tasks/${employeeId}`
+      `http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com:5000/api/tasks/${employeeId}`
     );
     return response.data;
   }

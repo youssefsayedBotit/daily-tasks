@@ -11,7 +11,7 @@ const UserForm = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const response = await axios.get("http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com/api/users");
+    const response = await axios.get("http://ec2-3-121-114-35.eu-central-1.compute.amazonaws.com:5000/api/users");
     const id = response.data.length + 1;
     dispatch(
       createUser({
