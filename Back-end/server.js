@@ -10,13 +10,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "daily-tasks-report-frontend/build")));
+app.use(express.static(path.join("/home/ubuntu/daily-tasks/daily-tasks-report-frontend/build")));
 
 // Handle GET requests to /api/* and send to API
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/daily-tasks-report-frontend/build/index.html"));
+  res.sendFile(path.join("/home/ubuntu/daily-tasks/daily-tasks-report-frontend/build"));
 });
 
 mongoose
